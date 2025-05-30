@@ -1,5 +1,5 @@
 function displayOrders() {
-    fetch('http://localhost:8008/orders/admin/all')
+    fetch('https://slvetooltitans.com/orders/admin/all')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch orders');
@@ -172,7 +172,7 @@ function handleSaveClick(orderId, row) {
     };
     console.log(`Updating order ${orderId} with payload:`, JSON.stringify(updatePayload));
 
-    fetch(`http://localhost:8008/orders/update/${orderId}`, {
+    fetch(`https://slvetooltitans.com/orders/update/${orderId}`, {
         method: 'PUT', // or 'PATCH'
         headers: {
             'Content-Type': 'application/json',

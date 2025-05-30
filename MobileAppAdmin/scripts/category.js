@@ -1,5 +1,5 @@
 // function displayCategories() {
-//     fetch('http://localhost:8008/api/categories')
+//     fetch('https://slvetooltitans.com/api/categories')
 //         .then(response => {
 //             if (!response.ok) {
 //                 throw new Error('Failed to fetch categories');
@@ -43,7 +43,7 @@
 //         });
 // }
 function displayCategories() {
-    fetch('http://localhost:8008/api/categories')
+    fetch('https://slvetooltitans.com/api/categories')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch categories');
@@ -81,7 +81,7 @@ function openAddModal() {
 }
 
 function openEditModal(categoryId) {
-    fetch(`http://localhost:8008/api/categories`)
+    fetch(`https://slvetooltitans.com/api/categories`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch category details');
@@ -114,7 +114,7 @@ function saveNewCategory(event) {
         image: document.getElementById('newCategoryImage').value
     };
 
-    fetch('http://localhost:8008/api/categories/createCategory', {
+    fetch('https://slvetooltitans.com/api/categories/createCategory', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -147,7 +147,7 @@ function saveEditedCategory(event) {
         image: document.getElementById('editCategoryImage').value
     };
 
-    fetch(`http://localhost:8008/api/categories/update/${updatedCategory.id}`, {
+    fetch(`https://slvetooltitans.com/api/categories/update/${updatedCategory.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -173,7 +173,7 @@ function saveEditedCategory(event) {
 }
 
 function deleteCategory(categoryId) {
-    fetch(`http://localhost:8008/api/categories/delete/${categoryId}`, {
+    fetch(`https://slvetooltitans.com/api/categories/delete/${categoryId}`, {
         method: 'DELETE',
         headers: {
             'accept': '*/*'

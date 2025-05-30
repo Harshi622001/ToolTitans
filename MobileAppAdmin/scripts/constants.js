@@ -1,5 +1,5 @@
 // Base API URL
-const BASE_API_URL = 'http://localhost:8008/api';
+const BASE_API_URL = 'https://slvetooltitans.com/api';
 
 // Product APIs
 const PRODUCT_API = {

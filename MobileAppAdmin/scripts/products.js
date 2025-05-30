@@ -74,7 +74,7 @@ function collectDescriptions(containerId) {
 }
 
 function displayProducts() {
-    fetch('http://localhost:8008/api/products/getAllProduct')
+    fetch('https://slvetooltitans.com/api/products/getAllProduct')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch products');
@@ -167,7 +167,7 @@ function openAddModal() {
 }
 
 function openEditModal(productId) {
-    fetch(`http://localhost:8008/api/products/getProductById/${productId}`) // Fetch specific product
+    fetch(`https://slvetooltitans.com/api/products/getProductById/${productId}`) // Fetch specific product
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch product details for editing');
@@ -300,7 +300,7 @@ function saveNewProduct(event) {
     // The categoryId in the URL for createProduct might be redundant if also in body,
     // but matching existing backend controller signature.
     // Ensure your backend ProductService.createProduct uses the categoryId from ProductEntity if the RequestParam is not primary.
-    fetch(`http://localhost:8008/api/products/createProduct?categoryId=${categoryIdValue}`, {
+    fetch(`https://slvetooltitans.com/api/products/createProduct?categoryId=${categoryIdValue}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -347,7 +347,7 @@ function saveEditedProduct(event) {
         productDetails: productBeingEdited.productDetails || [] // Preserve existing variants
     };
 
-    fetch(`http://localhost:8008/api/products/updateProduct/${productId}`, {
+    fetch(`https://slvetooltitans.com/api/products/updateProduct/${productId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -374,7 +374,7 @@ function saveEditedProduct(event) {
 }
 
 function deleteProduct(productId) {
-    fetch(`http://localhost:8008/api/products/deleteProduct/${productId}`, {
+    fetch(`https://slvetooltitans.com/api/products/deleteProduct/${productId}`, {
         method: 'DELETE',
         headers: {
             'accept': '*/*'
@@ -403,7 +403,7 @@ function deleteProduct(productId) {
     let productBeingEdited = null; // Variable to store product being edited
 
     function openVariantModal(productId) {
-        fetch(`http://localhost:8008/api/products/getProductById/${productId}`)
+        fetch(`https://slvetooltitans.com/api/products/getProductById/${productId}`)
             .then(response => {
                 if (!response.ok) throw new Error(`Failed to fetch product details. Status: ${response.status}`);
                 return response.json();
@@ -813,7 +813,7 @@ function deleteProduct(productId) {
     
     
     function updateProductWithVariants(productEntity, modalToCloseId = null) {
-        fetch(`http://localhost:8008/api/products/updateProduct/${productEntity.id}`, {
+        fetch(`https://slvetooltitans.com/api/products/updateProduct/${productEntity.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
