@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+    <link rel="stylesheet" href="./styles/category.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html"><img src="./images/ToolTitans_logo.png" alt="App Logo"></a>
+        <div class="nav-links">
+            <a href="products.html">Products</a>
+            <a href="category.html">Category</a>
+            <a href="subcategory.html">Sub Category</a>
+            <a href="orders.html">Orders</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Category Page</h1>
+        <button onclick="openAddModal()">Add New Category</button>
+        <div class="category-list" id="category-list">
+            <!-- Category items will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Add Modal -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addModal')">&times;</span>
+            <h2>Add New Category</h2>
+            <form id="addForm" onsubmit="saveNewCategory(event)">
+                <label for="newCategoryName">Name:</label>
+                <input type="text" id="newCategoryName" required><br><br>
+                <label for="newCategoryImage">Image URL:</label>
+                <input type="text" id="newCategoryImage" required><br><br>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editModal')">&times;</span>
+            <h2>Edit Category</h2>
+            <form id="editForm" onsubmit="saveEditedCategory(event)">
+                <input type="hidden" id="editCategoryId">
+                <label for="editCategoryName">Name:</label>
+                <input type="text" id="editCategoryName" required><br><br>
+                <label for="editCategoryImage">Image URL:</label>
+                <input type="text" id="editCategoryImage" required><br><br>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./scripts/category.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+        .navbar img {
+            height: 60px; /* Increase the height of the logo */
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 30px; /* Add space between the links */
+            margin-left: 100px;
+            width: 80%;
+        }
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .order-table th, .order-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .order-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html"><img src="./images/ToolTitans_logo.png" alt="App Logo"></a>
+        <div class="nav-links">
+            <a href="products.html">Products</a>
+            <a href="category.html">Category</a>
+            <a href="subcategory.html">Sub Category</a>
+            <a href="orders.html">Orders</a>
+        </div>
+    </div>
+    <h1>Orders Page</h1>
+    <div id="order-list">
+        <!-- Orders will be loaded here by JavaScript -->
+        <p>Loading orders...</p>
+    </div>
+    <script src="./scripts/order.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="./styles/products.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html"><img src="./images/ToolTitans_logo.png" alt="App Logo"></a>
+        <div class="nav-links">
+            <a href="products.html">Products</a>
+            <a href="category.html">Category</a>
+            <a href="subcategory.html">Sub Category</a>
+            <a href="orders.html">Orders</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Products Page</h1>
+        <button onclick="openAddModal()">Add New Product</button>
+        <div class="product-list" id="product-list">
+            <!-- Product items will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Add Modal -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addModal')">&times;</span>
+            <h2>Add New Product</h2>
+            <form id="addForm" onsubmit="saveNewProduct(event)">
+                <label for="newProductName">Name:</label>
+                <input type="text" id="newProductName" required><br><br>
+
+                <label for="newProductSummary">Product Summary (Max 250 chars):</label><br>
+                <textarea id="newProductSummary" rows="4" maxlength="250" required></textarea><br><br>
+
+                <div id="newProductImages">
+                    <label>Images (Main Product Image):</label>
+                    <div>
+                        <input type="text" placeholder="Image URL" class="image-url">
+                        <button type="button" onclick="addImageField(document.getElementById('newProductImages'))">Add Image +</button>
+                    </div>
+                </div>
+                <label for="newProductUnits">Units in Box:</label>
+                <input type="number" id="newProductUnits" required><br><br>
+                <label for="newProductBrand">Brand:</label>
+                <input type="text" id="newProductBrand" required><br><br>
+                <div id="newProductDescriptions">
+                    <label>Descriptions:</label>
+                    <div>
+                        <input type="text" placeholder="Key" class="description-key">
+                        <input type="text" placeholder="Value" class="description-value">
+                        <button type="button" onclick="addDescriptionField(document.getElementById('newProductDescriptions'))">Add Descriptions
+                            +</button>
+                    </div>
+                </div>
+                <label for="newProductSubcategory">Category ID:</label>
+                <input type="number" id="newProductSubcategory" required><br><br>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editModal')">&times;</span>
+            <h2>Edit Product</h2>
+            <form id="editForm" onsubmit="saveEditedProduct(event)">
+                <input type="hidden" id="editProductId">
+                <label for="editProductName">Name:</label>
+                <input type="text" id="editProductName" required><br><br>
+                <div id="editProductImages">
+                    <label>Images:</label>
+                    <!-- Dynamic image fields will be added here -->
+                    <div>
+                        <button type="button" onclick="addImageField(document.getElementById('editProductImages'))">Add Image +</button>
+                    </div>
+                </div>
+                <label for="editProductSummary">Product Summary (Max 250 chars):</label><br>
+                <textarea id="editProductSummary" rows="4" maxlength="250" required></textarea><br><br>
+                <label for="editProductUnits">Units in Box:</label>
+                <input type="number" id="editProductUnits" required><br><br>
+                <label for="editProductBrand">Brand:</label>
+                <input type="text" id="editProductBrand" required><br><br>
+                <div id="editProductDescriptions">
+                    <label>Descriptions:</label>
+                    <!-- Dynamic description fields will be added here -->
+                </div>
+                <label for="editProductSubcategory">Category ID:</label>
+                <input type="number" id="editProductSubcategory" required><br><br>
+                <button type="submit">Save</button>
+            </form>
+
+    <script src="./scripts/constants.js"></script>
+    <script src="./scripts/products.js"></script>
+</body>
+
+</html>
